@@ -110,7 +110,7 @@ const loadedImages = [];
 let framesLoaded = 0;
 
 function preloadFrames(onProgress, onComplete) {
-  const frameDir = `./${window.location.origin}/ezgif-77958c773886d714-jpg`;
+  const frameDir = `/ezgif-77958c773886d714-jpg`;
 
   
   
