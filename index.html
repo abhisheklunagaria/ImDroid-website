@@ -214,11 +214,27 @@
       <a href="mailto:abhilunagaria@gmail.com?subject=Requirement%20for%20Imdroid" class="primary-gradient-bg text-white font-label-md text-label-md px-6 py-3 rounded-full hover:opacity-90 transition-all shadow-lg shadow-primary-container/20 hidden md:block text-center">
         Get Started
       </a>
-      <button class="md:hidden text-on-surface">
-        <span class="material-symbols-outlined">menu</span>
+      <button id="mobile-menu-btn" class="md:hidden text-on-surface p-2 rounded-lg hover:bg-white/5 transition-colors" aria-label="Open menu">
+        <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
       </button>
     </div>
   </header>
+
+  <!-- ================= MOBILE NAV DRAWER ================= -->
+  <div id="mobile-nav-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <nav id="mobile-nav-drawer" class="fixed top-0 right-0 h-full w-72 bg-surface-container-low border-l border-outline-variant/30 z-50 flex flex-col p-8 gap-6 translate-x-full transition-transform duration-300 ease-out">
+    <div class="flex justify-between items-center mb-4">
+      <span class="font-headline-md text-headline-md font-bold text-primary">Menu</span>
+      <button id="mobile-nav-close" class="text-on-surface-variant hover:text-on-surface p-1">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#services" onclick="closeMobileNav()">Services</a>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#portfolio" onclick="closeMobileNav()">Portfolio</a>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#process" onclick="closeMobileNav()">Process</a>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/20" href="#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="mailto:abhilunagaria@gmail.com?subject=Requirement%20for%20Imdroid" class="primary-gradient-bg text-white font-label-md text-label-md px-6 py-3 rounded-full hover:opacity-90 transition-all text-center mt-4">Get Started</a>
+  </nav>
 
   <main class="flex-grow z-10">
     <!-- ================= HERO SECTION (WITH AUTOPLAY ANIMATION) ================= -->
@@ -485,7 +501,62 @@
     </div>
   </footer>
 
+  <!-- ================= SCROLL TO TOP BUTTON ================= -->
+  <button id="scroll-to-top" aria-label="Scroll to top" title="Back to top"
+    class="fixed bottom-8 right-6 z-40 w-12 h-12 rounded-full primary-gradient-bg text-white flex items-center justify-center shadow-xl shadow-primary-container/40 opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:scale-110 hover:opacity-90 active:scale-95">
+    <span class="material-symbols-outlined" style="font-size:22px">keyboard_arrow_up</span>
+  </button>
+
   <!-- Main JavaScript Bundle -->
   <script type="module" src="./main.js"></script>
+
+  <!-- Mobile Nav & Scroll-to-Top Script -->
+  <script>
+    // ---- Mobile Nav ----
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+    const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+    const mobileNavClose = document.getElementById('mobile-nav-close');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+
+    function openMobileNav() {
+      mobileNavOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      mobileNavOverlay.classList.add('opacity-100');
+      mobileNavDrawer.classList.remove('translate-x-full');
+      mobileNavDrawer.classList.add('translate-x-0');
+      mobileMenuIcon.textContent = 'close';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileNav() {
+      mobileNavOverlay.classList.add('opacity-0', 'pointer-events-none');
+      mobileNavOverlay.classList.remove('opacity-100');
+      mobileNavDrawer.classList.add('translate-x-full');
+      mobileNavDrawer.classList.remove('translate-x-0');
+      mobileMenuIcon.textContent = 'menu';
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileNav);
+    mobileNavClose.addEventListener('click', closeMobileNav);
+    mobileNavOverlay.addEventListener('click', closeMobileNav);
+
+    // ---- Scroll-to-top ----
+    const scrollTopBtn = document.getElementById('scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
