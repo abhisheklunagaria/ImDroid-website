@@ -212,6 +212,29 @@ html, body {
   100% { transform: rotate(360deg); }
 }
 
+/* ================= STICKY NAV STATES ================= */
+.nav-transparent {
+  background: rgba(5, 5, 11, 0.6);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+}
+
+.nav-scrolled {
+  background: rgba(5, 5, 11, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 61, 255, 0.05);
+}
+
+/* Push main content below fixed header */
+body > main,
+#animation-section {
+  padding-top: 0; /* hero section is full-height so no offset needed */
+}
+
 /* ================= NAVIGATION BAR ================= */
 .navbar {
   position: fixed;
@@ -345,7 +368,7 @@ html, body {
 /* ================= VIEWPORT & STICKY TRACK ================= */
 .scroll-track {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Tall enough for scroll-driven frame animation */
   background: #040409;
 }
 

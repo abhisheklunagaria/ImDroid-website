@@ -200,7 +200,7 @@
   <div class="glow-bg glow-cyan"></div>
 
   <!-- ================= NAVIGATION BAR ================= -->
-  <header class="bg-background/80 dark:bg-background/80 backdrop-blur-xl docked full-width top-0 sticky bg-surface-container/10 border-b border-outline-variant/20 z-50">
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-transparent">
     <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md w-full max-w-[1280px] mx-auto">
       <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer hover:opacity-80 transition-all scale-95 duration-200">
         Imdroid
@@ -541,16 +541,29 @@
     mobileNavClose.addEventListener('click', closeMobileNav);
     mobileNavOverlay.addEventListener('click', closeMobileNav);
 
-    // ---- Scroll-to-top ----
+    // ---- Scroll-to-top + Sticky Nav ----
     const scrollTopBtn = document.getElementById('scroll-to-top');
+    const siteHeader = document.getElementById('site-header');
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
+      const y = window.scrollY;
+
+      // Scroll-to-top button
+      if (y > 300) {
         scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
         scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
       } else {
         scrollTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
         scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+
+      // Sticky nav glass effect
+      if (y > 50) {
+        siteHeader.classList.remove('nav-transparent');
+        siteHeader.classList.add('nav-scrolled');
+      } else {
+        siteHeader.classList.remove('nav-scrolled');
+        siteHeader.classList.add('nav-transparent');
       }
     });
 
