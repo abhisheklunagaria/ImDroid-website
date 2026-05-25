@@ -1,39 +1,521 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Imdroid</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./index.css">
-  <style>
-    body { background-color: #05050b; color: #f0f2fa; font-family: 'Inter', sans-serif; }
-    .content-container { max-width: 800px; margin: 0 auto; padding: 120px 20px; }
-    p { margin-bottom: 20px; line-height: 1.8; color: #ccc3d8; }
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | Imdroid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-fixed": "#25005a",
+                  "primary-container": "#7c3aed",
+                  "on-secondary": "#002e6a",
+                  "surface-container-high": "#2c2833",
+                  "secondary-fixed": "#d8e2ff",
+                  "inverse-on-surface": "#332f39",
+                  "tertiary-fixed-dim": "#ffb690",
+                  "inverse-surface": "#e8dfee",
+                  "primary": "#d2bbff",
+                  "error-container": "#93000a",
+                  "on-tertiary": "#552100",
+                  "on-secondary-fixed": "#001a42",
+                  "on-surface": "#e8dfee",
+                  "secondary-fixed-dim": "#adc6ff",
+                  "primary-fixed": "#eaddff",
+                  "tertiary-container": "#aa4900",
+                  "on-tertiary-fixed-variant": "#783200",
+                  "inverse-primary": "#732ee4",
+                  "surface-bright": "#3c3742",
+                  "background": "#15121b",
+                  "on-secondary-container": "#e6ecff",
+                  "on-error-container": "#ffdad6",
+                  "tertiary-fixed": "#ffdbca",
+                  "tertiary": "#ffb690",
+                  "on-surface-variant": "#ccc3d8",
+                  "on-secondary-fixed-variant": "#004395",
+                  "secondary": "#adc6ff",
+                  "surface-variant": "#37333e",
+                  "primary-fixed-dim": "#d2bbff",
+                  "on-primary-fixed-variant": "#5a00c6",
+                  "surface-container-highest": "#37333e",
+                  "surface-container": "#221e28",
+                  "on-background": "#e8dfee",
+                  "surface-tint": "#d2bbff",
+                  "outline-variant": "#4a4455",
+                  "surface-container-low": "#1d1a24",
+                  "on-primary": "#3f008e",
+                  "on-tertiary-container": "#ffdecf",
+                  "error": "#ffb4ab",
+                  "surface-dim": "#15121b",
+                  "secondary-container": "#0566d9",
+                  "on-tertiary-fixed": "#341100",
+                  "on-error": "#690005",
+                  "outline": "#958da1",
+                  "on-primary-container": "#ede0ff",
+                  "surface-container-lowest": "#100d16",
+                  "surface": "#15121b"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "lg": "48px",
+                  "base": "4px",
+                  "md": "24px",
+                  "margin-desktop": "64px",
+                  "gutter": "24px",
+                  "xl": "80px",
+                  "sm": "16px",
+                  "xs": "8px",
+                  "margin-mobile": "20px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Outfit", "Inter"],
+                  "display": ["Outfit", "Inter"],
+                  "label-sm": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-lg": ["Outfit", "Inter"],
+                  "body-lg": ["Inter"],
+                  "label-md": ["Inter"],
+                  "headline-lg-mobile": ["Outfit", "Inter"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "display": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #7c3aed 0%, #ff8a00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #15121b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #37333e;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7c3aed;
+    }
+
+    .policy-content ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .policy-content ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .policy-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background: #d2bbff;
+      border-radius: 50%;
+    }
+    .policy-content h3 {
+      font-family: 'Outfit', 'Inter';
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #d2bbff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .policy-content h3::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #7c3aed;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
+    }
   </style>
 </head>
-<body>
-  <!-- Header Minimal -->
-  <header class="bg-[#05050b]/80 backdrop-blur-xl w-full top-0 sticky border-b border-white/10 z-50">
-    <div class="flex justify-between items-center px-6 py-6 w-full max-w-[1280px] mx-auto">
-      <a href="index.html" class="font-bold text-2xl text-[#d2bbff] hover:opacity-80 transition-all">
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="max-w-[1280px] mx-auto px-margin-desktop py-4 flex justify-between items-center">
+<div class="font-headline-md text-headline-md font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
         Imdroid
+      </div>
+<div class="flex items-center">
+<a class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200" href="index.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        Back to Home
       </a>
-      <a href="index.html" class="text-sm font-semibold text-white/60 hover:text-white transition-colors">Back to Home</a>
-    </div>
-  </header>
-
-  <div class="content-container">
-    <h1 class="font-headline-lg text-headline-lg text-on-background mb-8">Privacy Policy</h1>
-    <p>Welcome to ImDroid Software.</p>
-    <p>The following Privacy Policy applies to all games of ImDroid Software as well as any and all related web sites.</p>
-    <p>The below sets out our Privacy Policy:</p>
-    <p>As a general rule, information provided by you will be used exclusively by us for the purposes of delivering the best possible service and user experience.</p>
-    <p>We will inform you of any major improvements to the service, no more frequently than about once a week to once a month.</p>
-    <p>We will not pass on your email addresses to any 3rd parties except to those 3rd parties whose offers you directly request and those social networks that you already use. Additionally in these circumstances you will receive an email from the App/Game.</p>
-    <p>We will still respond to service requests initiated by you.</p>
-    <p>The App/Game may periodically collect information from you through automated means. When you use the App, or read our emails, we may use "cookies" or other online tracking mechanisms in order to provide better service, facilitate your use of the App/Game, store online preferences, track usage of the App/Game, or enhance security.</p>
-  </div>
-</body>
-</html>
+</div>
+</div>
+</nav>
+<main class="relative pt-[120px] pb-xl overflow-hidden">
+<!-- Decorative Orbs -->
+<div class="absolute top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
+<div class="absolute bottom-[20%] -right-[5%] w-[30%] h-[30%] bg-tertiary/10 blur-[100px] rounded-full -z-10"></div>
+<div class="max-w-[1280px] mx-auto px-margin-desktop md:px-margin-desktop px-margin-mobile">
+<!-- Header Section -->
+<div class="mb-xl max-w-4xl">
+<div class="inline-flex items-center gap-xs px-sm py-1 rounded-full bg-surface-variant/50 border border-outline-variant mb-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Compliance Center</span>
+</div>
+<h1 class="font-display text-headline-lg md:text-display mb-md text-on-surface">
+          Privacy <span class="text-gradient">Policy</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          At Imdroid, we value your trust and prioritize the security of your data. This policy outlines how we handle your digital footprint with absolute transparency.
+        </p>
+</div>
+<!-- Bento-style Grid for Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar Meta Info -->
+<aside class="lg:col-span-4 space-y-gutter">
+<div class="glass-card rounded-xl p-md sticky top-[100px]">
+<h4 class="font-label-md text-label-md text-primary mb-sm uppercase tracking-wider">Document Metadata</h4>
+<div class="space-y-sm">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/30">
+<span class="text-on-surface-variant font-label-md">Effective Date</span>
+<span class="text-on-surface font-label-md">January 1, 2026</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/30">
+<span class="text-on-surface-variant font-label-md">Last Updated</span>
+<span class="text-on-surface font-label-md">January 1, 2026</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant font-label-md">Version</span>
+<span class="text-on-surface font-label-md">v1.0.0</span>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-md border-l-4 border-l-primary">
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+              "By using the Imdroid application, you implicitly agree to the data management practices described in this document."
+            </p>
+</div>
+<div class="hidden lg:block relative rounded-xl overflow-hidden aspect-[3/4]">
+<img alt="A futuristic digital representation of security and data privacy." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XTrYzrUIbcboIliIOC25vdkgtgWYPmZKKNGfq9kK_CIxwB3lgGurJGQLnWO39PEUGk855Yryb3oDLNIsCdeZl6EYkQHvB4rQeDS-ZkZsymi9mQgY_tASo59lI2xYqczkTTDWZzNVyT0lSlQY3aseOiK36OQOyP-JUL0vJmQGJvX1CPCLA9NUCfthjMD17PakpWmh__H2Qhq1ooYbcvUYGhiEluFEld5d6ELTkkEWa_kK2or4hlErrH3AQTpoZfDYvShWm6rY2-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+</aside>
+<!-- Main Editorial Content -->
+<article class="lg:col-span-8 glass-card rounded-xl p-md md:p-xl space-y-xl policy-content">
+<!-- 01. Introduction -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">01.</span> Introduction
+            </h2>
+<div class="space-y-sm text-on-surface-variant leading-relaxed">
+<p>Welcome to <span class="text-primary font-bold">Imdroid</span> (“we,” “our,” or “us”). This Privacy Policy explains how we collect, use, store, retain, disclose, and delete your information when you use our mobile application and related services.</p>
+<p>In our pursuit of pushing the boundaries of mobile engineering, we treat your privacy as a cornerstone of our architecture, not an afterthought. By using the app, you agree to the practices described in this Privacy Policy.</p>
+</div>
+</section>
+<!-- 02. Information We Collect -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">02.</span> Information We Collect
+            </h2>
+<div class="space-y-md">
+<div>
+<h3>A. Personal Information</h3>
+<p class="text-on-surface-variant mb-2">Depending on the app functionality, we may collect:</p>
+<ul class="text-on-surface-variant font-body-md">
+<li>Name</li>
+<li>Email address</li>
+<li>Phone number</li>
+<li>Profile information</li>
+<li>User-generated content</li>
+<li>Customer support communications</li>
+</ul>
+</div>
+<div>
+<h3>B. Device &amp; Technical Information</h3>
+<p class="text-on-surface-variant mb-2">We may automatically collect:</p>
+<ul class="text-on-surface-variant font-body-md">
+<li>Device model</li>
+<li>Operating system version</li>
+<li>IP address</li>
+<li>App version</li>
+<li>Device identifiers</li>
+<li>Crash logs</li>
+<li>Performance diagnostics</li>
+</ul>
+</div>
+<div>
+<h3>C. Usage Information</h3>
+<p class="text-on-surface-variant mb-2">We may collect information about:</p>
+<ul class="text-on-surface-variant font-body-md">
+<li>App interactions</li>
+<li>Features used</li>
+<li>Session duration</li>
+<li>User preferences</li>
+<li>Analytics events</li>
+</ul>
+</div>
+<div>
+<h3>D. Payment Information</h3>
+<p class="text-on-surface-variant">If subscriptions or purchases are offered, payments are processed securely through Google Play Billing and Apple In-App Purchases. We do not directly store complete payment card information.</p>
+</div>
+</div>
+</section>
+<!-- 03. How We Use Information -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">03.</span> How We Use Information
+            </h2>
+<p class="text-on-surface-variant mb-md">We process data to deliver the playful yet professional experience Imdroid is known for:</p>
+<ul class="text-on-surface-variant font-body-md">
+<li>Provide and maintain the app</li>
+<li>Authenticate users</li>
+<li>Improve functionality and performance</li>
+<li>Personalize user experience</li>
+<li>Provide customer support</li>
+<li>Send important notifications</li>
+<li>Detect fraud, abuse, or security incidents</li>
+<li>Comply with legal obligations</li>
+</ul>
+</section>
+<!-- 04. Third-Party Services -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">04.</span> Third-Party Services
+            </h2>
+<div class="space-y-sm text-on-surface-variant">
+<p>Our app may use third-party services such as:</p>
+<ul class="font-body-md">
+<li>Google Firebase</li>
+<li>Google Analytics</li>
+<li>Firebase Crashlytics</li>
+<li>Cloud hosting providers</li>
+<li>Authentication providers</li>
+<li>Payment processors</li>
+</ul>
+<p>These third parties may collect and process data according to their own privacy policies.</p>
+<p>Firebase Privacy Policy: <a class="text-primary hover:underline" href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></p>
+</div>
+</section>
+<!-- 05. Data Sharing & Disclosure -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">05.</span> Data Sharing &amp; Disclosure
+            </h2>
+<div class="space-y-sm text-on-surface-variant">
+<p>We do not sell users’ personal information. We may share data only in the following situations:</p>
+<ul class="font-body-md">
+<li>With service providers assisting app operations</li>
+<li>To comply with legal obligations</li>
+<li>To enforce our terms and policies</li>
+<li>To protect rights, safety, and security</li>
+<li>During business transfers such as mergers or acquisitions</li>
+</ul>
+</div>
+</section>
+<!-- 06. Data Retention -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-md flex items-center gap-sm">
+<span class="text-gradient">06.</span> Data Retention
+            </h2>
+<p class="text-on-surface-variant mb-md">We retain user data only for as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements.</p>
+<div class="overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low mb-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="p-md font-label-md text-on-surface border-b border-outline-variant">Data Type</th>
+<th class="p-md font-label-md text-on-surface border-b border-outline-variant">Retention Period</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface-variant">
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="p-md">Account Information</td>
+<td class="p-md">Until deletion or up to 24mo inactivity</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="p-md">Analytics Data</td>
+<td class="p-md">Up to 14 months</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="p-md">Crash Logs</td>
+<td class="p-md">Up to 12 months</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="p-md">Support Communications</td>
+<td class="p-md">Up to 24 months</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-md">Legal/Financial Records</td>
+<td class="p-md">As required by applicable law</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-on-surface-variant text-body-md">After the applicable retention period expires, data is securely deleted, anonymized, or aggregated.</p>
+</section>
+<!-- 07. Data Deletion -->
+<section class="p-md bg-gradient-to-br from-primary/5 to-tertiary/5 rounded-xl border border-primary/20">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">07.</span> Data Deletion
+            </h2>
+<p class="text-on-surface-variant mb-md">Users may request deletion of their account and personal data at any time.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<h3 class="text-label-md uppercase tracking-wider !mt-0 !mb-2">How to Request Deletion</h3>
+<ul class="text-on-surface-variant font-body-md">
+<li>Using the in-app account deletion feature</li>
+<li>Contacting us at: <a class="text-primary hover:underline" href="mailto:abhilunagaria@gmail.com">abhilunagaria@gmail.com</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-label-md uppercase tracking-wider !mt-0 !mb-2">Post-Deletion Process</h3>
+<p class="text-on-surface-variant font-body-md">Upon verification, accounts are deleted within 30 business days. Certain data may be held temporarily for legal, fraud prevention, or security purposes.</p>
+</div>
+</div>
+</section>
+<!-- 08. Children's Privacy -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">08.</span> Children’s Privacy
+            </h2>
+<p class="text-on-surface-variant">Our app is not directed to children under the age of 13. We do not knowingly collect personal information from children. If we become aware that a child has provided personal data, we will take reasonable steps to delete such information.</p>
+</section>
+<!-- 09. Security -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">09.</span> Security
+            </h2>
+<p class="text-on-surface-variant mb-sm">We implement reasonable administrative, technical, and organizational safeguards to protect user information, including:</p>
+<ul class="text-on-surface-variant font-body-md">
+<li>Encryption in transit</li>
+<li>Secure authentication</li>
+<li>Access controls</li>
+<li>Security monitoring</li>
+</ul>
+<p class="text-on-surface-variant italic text-label-sm mt-2">Note: No method of electronic storage or transmission is completely secure.</p>
+</section>
+<!-- 10. International Transfers -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">10.</span> International Transfers
+            </h2>
+<p class="text-on-surface-variant">Your information may be processed and stored in countries outside your jurisdiction where data protection laws may differ. By using the app, you consent to such transfers where permitted by law.</p>
+</section>
+<!-- 11. Your Rights -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">11.</span> Your Rights
+            </h2>
+<p class="text-on-surface-variant mb-sm">Depending on your jurisdiction, you may have rights to:</p>
+<ul class="text-on-surface-variant font-body-md grid grid-cols-1 sm:grid-cols-2">
+<li>Access your data</li>
+<li>Correct inaccurate information</li>
+<li>Delete your information</li>
+<li>Restrict processing</li>
+<li>Withdraw consent</li>
+<li>Request data portability</li>
+</ul>
+<p class="text-on-surface-variant mt-sm">To exercise these rights, contact us at: <a class="text-primary hover:underline font-bold" href="mailto:abhilunagaria@gmail.com">abhilunagaria@gmail.com</a></p>
+</section>
+<!-- 12. Changes -->
+<section>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mb-sm flex items-center gap-sm">
+<span class="text-gradient">12.</span> Changes to This Policy
+            </h2>
+<p class="text-on-surface-variant">We may update this Privacy Policy periodically. Changes will be posted within the app or on our website with an updated “Last Updated” date. Continued use of the app after updates constitutes acceptance of the revised policy.</p>
+</section>
+<!-- 13. Contact Us -->
+<section class="pt-xl border-t border-outline-variant">
+<h2 class="font-headline-lg text-headline-md mb-md text-on-surface">Contact Us</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<div class="p-md rounded-xl bg-surface-container-high border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-xs">corporate_fare</span>
+<p class="text-label-sm text-on-surface-variant uppercase mb-1">Company</p>
+<p class="text-body-md text-on-surface font-bold">Imdroid Agency</p>
+</div>
+<div class="p-md rounded-xl bg-surface-container-high border border-outline-variant">
+<span class="material-symbols-outlined text-secondary mb-xs">mail</span>
+<p class="text-label-sm text-on-surface-variant uppercase mb-1">Email</p>
+<a class="text-body-md text-on-surface font-bold hover:text-primary transition-colors" href="mailto:abhilunagaria@gmail.com">abhilunagaria@</br>gmail.com</a>
+</div>
+<div class="p-md rounded-xl bg-surface-container-high border border-outline-variant">
+<span class="material-symbols-outlined text-tertiary mb-xs">language</span>
+<p class="text-label-sm text-on-surface-variant uppercase mb-1">Website</p>
+<a class="text-body-md text-on-surface font-bold hover:text-tertiary transition-colors" href="https://imdroid.co.in">imdroid.co.in</a>
+</div>
+</div>
+</section>
+</article>
+</div>
+</div>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="bg-surface-container-lowest w-full py-xl border-t border-outline-variant mt-xl">
+<div class="max-w-[1280px] mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Imdroid</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Imdroid Agency. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-body-md text-primary hover:text-tertiary transition-colors" href="privacy.html">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="terms.html">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions: Floating effect for background elements on scroll
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const orbs = document.querySelectorAll('.bg-primary\\/10, .bg-tertiary\\/10');
+      
+      orbs.forEach((orb, index) => {
+        const speed = 0.05 * (index + 1);
+        orb.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
+</body></html>
