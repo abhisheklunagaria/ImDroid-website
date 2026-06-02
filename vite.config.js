@@ -7,7 +7,6 @@ export default defineConfig({
         main: 'index.html',
         privacy: 'privacy.html',
         terms: 'terms.html',
-		ads: 'app-ads.txt',
       },
     },
   },
