@@ -202,8 +202,9 @@
   <!-- ================= NAVIGATION BAR ================= -->
   <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-transparent">
     <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md w-full max-w-[1280px] mx-auto">
-      <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer hover:opacity-80 transition-all scale-95 duration-200">
-        Imdroid
+      <div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed cursor-pointer hover:opacity-80 transition-all scale-95 duration-200 flex items-center gap-3">
+        <img src="/logo.png" alt="Imdroid Logo" class="w-10 h-10 object-contain">
+        <span>Imdroid</span>
       </div>
       <nav class="hidden md:flex gap-gutter items-center">
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all scale-95 duration-200" href="#services">Services</a>
@@ -240,8 +241,16 @@
     <!-- ================= HERO SECTION (WITH AUTOPLAY ANIMATION) ================= -->
     <section id="animation-section" class="scroll-track">
       <div class="animation-viewport">
-        <!-- High-performance Canvas -->
-        <canvas id="animation-canvas"></canvas>
+        <!-- Hero Video - autoplay, loop, muted for full quality playback -->
+        <video
+          id="hero-video"
+          src="/hero_video.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+        ></video>
         
         <!-- Video Scanlines Overlay -->
         <div class="scanlines"></div>
@@ -249,60 +258,32 @@
         <!-- Vignette shadow wrapper -->
         <div class="vignette"></div>
 
-        <!-- Hero Content Overlay (Left Column from Stitch design) - Removed for storytelling overlay -->
+        <!-- Hero Content Overlay (Left Column from Stitch design) - Removed for storytelling overlay -->        <!-- Hidden dummy for JS compatibility -->
+        <div id="step-line-progress" style="display:none"></div>
 
-        <!-- Vertical Progress Tracker / Sidebar Step Menu (Aligned Right) -->
-        <div class="step-tracker">
-          <div class="step-line">
-            <div class="step-line-progress" id="step-line-progress" style="height: 0%"></div>
-          </div>
-          <div class="step-node active" data-target-frame="0" data-step="1">
-            <div class="step-node-dot"></div>
-            <span class="step-node-label">01 // UX WIREFRAMING</span>
-          </div>
-          <div class="step-node" data-target-frame="60" data-step="2">
-            <div class="step-node-dot"></div>
-            <span class="step-node-label">02 // INTERFACE BUILD</span>
-          </div>
-          <div class="step-node" data-target-frame="120" data-step="3">
-            <div class="step-node-dot"></div>
-            <span class="step-node-label">03 // BACKEND CONNECT</span>
-          </div>
-          <div class="step-node" data-target-frame="180" data-step="4">
-            <div class="step-node-dot"></div>
-            <span class="step-node-label">04 // APP DEPLOYMENT</span>
-          </div>
-        </div>
 
         <!-- Floating Storytelling Overlays (Aligned to the left of progress tracker) -->
         <div class="story-overlays-container">
           <!-- Step 1: UX Wireframing -->
           <div class="story-card active" id="story-card-1">
-            <div class="story-badge">DEV: DESIGN</div>
             <h2 class="story-title">Planning & <span class="accent-purple">Prototyping</span></h2>
             <p class="story-desc">Crafting the blueprint of the mobile application. We define user flows, establish the design system, and build interactive high-fidelity wireframes to map out user behavior before writing any code.</p>
-            <div class="story-action">
-              <span class="action-text">UX Architecture online</span>
-            </div>
           </div>
 
           <!-- Step 2: Interface Build -->
           <div class="story-card" id="story-card-2">
-            <div class="story-badge">DEV: INTERFACE</div>
             <h2 class="story-title">Frontend <span class="accent-orange">Architecture</span></h2>
             <p class="story-desc">Translating visual layouts into responsive mobile screens. Building reusable interactive components using native UI frameworks, and integrating fluid layout animations.</p>
           </div>
 
           <!-- Step 3: Backend Connect -->
           <div class="story-card" id="story-card-3">
-            <div class="story-badge">DEV: INTEGRATION</div>
             <h2 class="story-title">Services & <span class="accent-cyan">API Connect</span></h2>
             <p class="story-desc">Linking the client interface to robust database solutions and GraphQL/REST APIs. Handling secure authentication protocols and dynamic data caching layers.</p>
           </div>
 
           <!-- Step 4: App Deployment -->
           <div class="story-card" id="story-card-4">
-            <div class="story-badge success">DEV: PRODUCTION</div>
             <h2 class="story-title">Testing & <span class="accent-green">App Release</span></h2>
             <p class="story-desc">Running automated test suites across simulated iOS and Android environments, optimizing application bundles, and deploying directly to Google Play and Apple App Store.</p>
           </div>
@@ -410,20 +391,20 @@
           </div>
         </a>
 
-        <!-- Project Card 4: Electro Control -->
-        <a href="#" class="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer hover:shadow-tertiary/10 hover:border-tertiary/30 transition-all">
+        <!-- Project Card 4: EchoVoice -->
+        <a href="https://play.google.com/store/apps/details?id=com.aistudio.echovoice.trnslt" target="_blank" class="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer hover:shadow-tertiary/10 hover:border-tertiary/30 transition-all">
           <div class="relative aspect-[16/10] overflow-hidden bg-surface-container/50 flex items-center justify-center border-b border-outline-variant/20">
             <div class="absolute inset-0 bg-gradient-to-tr from-tertiary/10 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
-            <img src="./electro-screenshots/Android%20Screenshot%201.png" alt="Electro Control" class="absolute w-[60%] object-contain shadow-2xl rounded-xl transform translate-y-8 group-hover:translate-y-4 group-hover:scale-105 transition-all duration-500 z-10 border-4 border-[#1e1e24]" />
+            <img src="/echovoice_icon.png" alt="EchoVoice - Voice Translator" class="absolute w-32 h-32 object-cover shadow-2xl rounded-3xl transform translate-y-4 group-hover:translate-y-2 group-hover:scale-105 transition-all duration-500 z-10" />
           </div>
           <div class="p-md flex flex-col gap-2 flex-grow">
             <div class="flex justify-between items-center">
-              <h3 class="font-headline-md text-headline-md text-on-background group-hover:text-tertiary transition-colors">Electro Control</h3>
+              <h3 class="font-headline-md text-headline-md text-on-background group-hover:text-tertiary transition-colors">EchoVoice</h3>
               <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </div>
-            <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Electro control is professionally managed Group engaged in the manufacturing and supplying of the Electrical Control Panels used in various field such as Industries, Buildings, Malls, Hotels, Motel, Airports, Railways Station, Machinery and many more. and we developed an andorid application to manage orders and product enquiry for these products.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant text-sm flex-grow">Fast AI-powered voice and text translation for daily conversations.</p>
             <div class="flex gap-2 mt-2">
-              <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-tertiary/10 text-tertiary border border-tertiary/25">E-Commerce</span>
+              <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-tertiary/10 text-tertiary border border-tertiary/25">AI Tools</span>
               <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-white/5 text-on-surface-variant border border-outline-variant/30">Android</span>
             </div>
           </div>

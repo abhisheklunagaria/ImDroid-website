@@ -214,19 +214,19 @@ html, body {
 
 /* ================= STICKY NAV STATES ================= */
 .nav-transparent {
-  background: rgba(5, 5, 11, 0.6);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(5, 5, 15, 0.45);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
 
 .nav-scrolled {
-  background: rgba(5, 5, 11, 0.92);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 61, 255, 0.05);
+  background: rgba(5, 5, 15, 0.55);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* Push main content below fixed header */
@@ -368,27 +368,28 @@ body > main,
 /* ================= VIEWPORT & STICKY TRACK ================= */
 .scroll-track {
   position: relative;
-  height: 100vh; /* Tall enough for scroll-driven frame animation */
+  height: 100vh;
   background: #040409;
 }
 
 .animation-viewport {
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#animation-canvas {
+#hero-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
   z-index: 1;
 }
 
@@ -657,28 +658,34 @@ body > main,
 /* ================= STORYTELLING OVERLAYS ================= */
 .story-overlays-container {
   position: absolute;
-  left: 8%;
+  left: 5%;
   right: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  width: calc(100% - 240px);
-  max-width: 440px;
+  bottom: 40px;
+  top: auto;
+  transform: none;
+  width: min(460px, 48%);
+  min-height: 180px;
   z-index: 5;
   pointer-events: none;
 }
-/* .hero-text-overlay removed */
+
 .story-card {
-  padding: 0;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  /* Glass card — always readable over video */
+  padding: 28px 28px 24px 28px;
+  background: rgba(5, 5, 15, 0.45);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-left: 3px solid var(--color-purple);
+  border-radius: 16px;
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
   position: absolute;
   opacity: 0;
-  transform: translateY(30px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   width: 100%;
 }
@@ -687,57 +694,65 @@ body > main,
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
+
 .story-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 4px 10px;
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   color: var(--color-cyan);
-  background: rgba(0, 245, 245, 0.08);
-  border: 1px solid rgba(0, 245, 245, 0.15);
-  margin-bottom: 16px;
+  background: rgba(0, 245, 245, 0.12);
+  border: 1px solid rgba(0, 245, 245, 0.25);
+  margin-bottom: 14px;
+  text-transform: uppercase;
 }
 .story-badge.success {
   color: var(--color-green);
-  background: rgba(25, 220, 115, 0.08);
-  border-color: rgba(25, 220, 115, 0.15);
+  background: rgba(25, 220, 115, 0.12);
+  border-color: rgba(25, 220, 115, 0.25);
 }
+
 .story-title {
   font-family: var(--font-title);
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 16px;
-  color: var(--color-text-main);
+  margin-bottom: 12px;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
-.accent-purple { color: var(--color-purple); text-shadow: 0 0 20px rgba(139,61,255,0.2); }
-.accent-orange { color: var(--color-orange); text-shadow: 0 0 20px rgba(255,102,41,0.2); }
-.accent-cyan { color: var(--color-cyan); text-shadow: 0 0 20px rgba(0,245,245,0.2); }
-.accent-green { color: var(--color-green); text-shadow: 0 0 20px rgba(25, 220, 115, 0.2); }
+
+.accent-purple { color: var(--color-purple); }
+.accent-orange { color: var(--color-orange); }
+.accent-cyan   { color: var(--color-cyan);   }
+.accent-green  { color: var(--color-green);  }
 
 .story-desc {
-  font-size: 16px;
-  color: var(--color-text-muted);
-  margin-bottom: 24px;
-  max-width: 480px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(220, 215, 235, 0.85);
+  margin-bottom: 20px;
+  max-width: 100%;
 }
 .story-action {
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--color-cyan);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 .scroll-arrow {
   animation: bounce 1.6s infinite;
 }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
+  50%       { transform: translateY(4px); }
 }
 
 /* Mouse Scroll Prompt */
@@ -1131,167 +1146,92 @@ body > main,
 
 /* ================= RESPONSIVE STYLING ================= */
 
-/* ---- Tablet & Mobile (≤ 900px) ---- */
+/* ---- Tablet & Mobile (max 900px) ---- */
 @media (max-width: 900px) {
   .nav-menu { display: none; }
 
-  /* Hero / Scroll animation section */
-  .scroll-track {
-    height: 100svh; /* safe area for mobile browsers */
-  }
-  .animation-viewport {
-    height: 100svh;
-  }
+  .scroll-track       { height: 100svh; }
+  .animation-viewport { height: 100svh; }
 
-  /* Story overlay moves to bottom on mobile */
   .story-overlays-container {
     left: 0;
     right: 0;
     width: 100%;
     max-width: none;
-    padding: 0 20px;
     top: auto;
-    bottom: 24px;
+    bottom: 0;
     transform: none;
-    text-align: center;
+    padding: 16px 16px 24px;
+    /* gradient behind the whole container for extra depth */
+    background: linear-gradient(to top, rgba(4,4,9,0.85) 50%, transparent 100%);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
+  /* Keep glass card on mobile but adjust padding & border-radius */
   .story-card {
     position: relative;
-    max-width: 100%;
-    transform: translateY(20px) scale(0.97);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    padding: 20px 18px 16px;
+    border-radius: 12px;
+    transform: translateY(16px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .story-card.active {
-    transform: translateY(0) scale(1);
+    opacity: 1;
+    transform: translateY(0);
   }
-  .story-title {
-    font-size: 26px;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  .story-desc {
-    font-size: 13px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 12px;
-  }
-  .story-badge {
-    margin-bottom: 10px;
-  }
-
-  /* Hide step tracker dots on mobile */
+  .story-title  { font-size: 24px; line-height: 1.2; margin-bottom: 8px; }
+  .story-desc   { font-size: 13px; line-height: 1.5; margin-bottom: 10px; max-width: 100%; }
+  .story-badge  { margin-bottom: 8px; }
   .step-tracker { display: none; }
 
-  /* HUD panels */
-  .hud-panel {
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hud-middle {
-    order: 3;
-    width: 100%;
-    margin-top: 8px;
-  }
+  .hud-panel  { gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .hud-middle { order: 3; width: 100%; margin-top: 8px; }
 
-  /* Terminal */
   .terminal-body { flex-direction: column; height: auto; }
   .terminal-sidebar {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     flex-direction: row;
     overflow-x: auto;
     padding: 10px;
   }
   .sidebar-heading { display: none; }
 
-  /* Footer */
   .footer-container { flex-direction: column; gap: 40px; }
-  .footer-right { gap: 40px; flex-wrap: wrap; }
+  .footer-right     { gap: 40px; flex-wrap: wrap; }
 }
 
-/* ---- Mobile only (≤ 640px) ---- */
+/* ---- Mobile only (max 640px) ---- */
 @media (max-width: 640px) {
-
-  /* Hero animation canvas fills screen correctly */
-  .scroll-track { height: 100svh; }
+  .scroll-track       { height: 100svh; }
   .animation-viewport { height: 100svh; }
 
-  /* Story cards - compact layout */
-  .story-overlays-container {
-    bottom: 16px;
-    padding: 0 16px;
-  }
-  .story-title {
-    font-size: 22px;
-    line-height: 1.2;
-  }
-  .story-desc {
-    font-size: 12px;
-    line-height: 1.5;
-    max-width: 320px;
-  }
-  .story-action { justify-content: center; }
+  .story-overlays-container { padding: 16px 16px 24px; }
+  .story-title { font-size: 20px; }
+  .story-desc  { font-size: 12px; }
 
-  /* Scroll-to-top button - nudge left to not overlap anything */
   #scroll-to-top { bottom: 20px; right: 16px; width: 44px; height: 44px; }
 
-  /* Section headings scale down */
-  .font-headline-lg,
-  [class*="text-headline-lg"] {
-    font-size: 28px !important;
-    line-height: 36px !important;
+  .font-headline-lg, [class*="text-headline-lg"] {
+    font-size: 26px !important;
+    line-height: 34px !important;
   }
-  .font-headline-md,
-  [class*="text-headline-md"] {
+  .font-headline-md, [class*="text-headline-md"] {
     font-size: 18px !important;
     line-height: 26px !important;
   }
 
-  /* CTA section padding */
   .py-xl { padding-top: 48px; padding-bottom: 48px; }
-  .p-xl { padding: 32px 20px; }
-
-  /* Process section - stack numbers */
-  .grid.grid-cols-1.md\:grid-cols-4 {
-    gap: 24px;
-  }
-
-  /* Portfolio cards - full width on mobile */
-  .grid.grid-cols-1.md\:grid-cols-2.xl\:grid-cols-4 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Services grid */
-  .grid.grid-cols-1.md\:grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Footer text align */
-  footer .grid {
-    text-align: center;
-  }
-  footer .flex.flex-col.md\:flex-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Scanlines - tone down on mobile for performance */
-  .scanlines { opacity: 0.2; }
-  .vignette {
-    box-shadow: inset 0 0 60px rgba(0,0,0,0.7), inset 0 0 120px rgba(0,0,0,0.8);
-  }
+  .p-xl  { padding: 32px 16px; }
+  .scanlines { opacity: 0.15; }
 }
 
-/* ---- Very small screens (≤ 380px) ---- */
+/* ---- Very small screens (max 380px) ---- */
 @media (max-width: 380px) {
-  .story-title { font-size: 18px; }
-  .story-desc { font-size: 11px; }
+  .story-title { font-size: 17px; }
+  .story-desc  { font-size: 11px; }
 }
-
